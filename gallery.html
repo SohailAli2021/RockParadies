@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="images/logo.png">
+    <title>Rock Paradise</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    
+    <link rel="stylesheet" href="bootstrap-5.3.0-alpha1-dist/css/bootstrap.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+    
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <!-- foont awsome cdn -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<style>
+    .navbar{
+        height: 75px;
+        border-bottom  : 2px solid black;
+    }
+    .fotclr{
+        height: 350px;
+        border-top: 1px solid black;
+    }
+
+        *{
+    margin: 0;
+    padding: 0;
+    /* font-family: sans-serif; */
+}
+
+h1{
+    text-align: center;
+    font-size: 60px;
+}
+
+.img-gallery{
+    width: 80%;
+    margin: 100px auto 50px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
+    grid-gap:30px;
+}
+.img-gallery img{
+    width: 100%;
+    cursor: pointer;
+}
+#pic2{
+    width: 100%;
+    height: 90%;
+}
+.img-gallery img:hover{
+    transform: scale(0.8) rotate(-15deg);
+    border-radius: 20px;
+    box-shadow: 0 32px 75px rgba(68, 77, 136, 0.2 );
+}
+.full-img{
+    width: 100%;
+    height: 100vh;
+    background: rgba(0, 0,0, 0.9);
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: none;
+    align-items: center;
+    justify-content: center; 
+    z-index: 100;
+}
+.full-img  img{
+    width: 90%;
+    max-width: 500px;
+} 
+.full-img span{
+    position: absolute;
+    top: 5%;
+    right: 5%;
+    font-size: 30px;
+    color: #fff;
+    cursor: pointer;
+}
+
+.text-area{
+font-size: 70px;
+font-family: roboto;
+text-transform: uppercase;
+font-weight: bold;
+
+}
+.text-area span{
+color: #0c0a0a;
+opacity: 0;
+transform: translate(0,100px) rotate(360deg) scale(0);
+animation: animate 5s forwards;
+
+
+}
+.text-area span{
+display: inline-block;
+}
+.text-area span:nth-of-type(2) {
+animation-delay: .2s;
+}
+.text-area span:nth-of-type(3) {
+animation-delay: .3s;
+}
+.text-area span:nth-of-type(4) {
+animation-delay: .4s;
+}
+.text-area span:nth-of-type(5) {
+animation-delay: .5s;
+}
+.text-area span:nth-of-type(6) {
+animation-delay: .6s;
+}
+.text-area span:nth-of-type(7) {
+animation-delay: .7s;
+}
+.text-area span:nth-of-type(8) {
+animation-delay: .8s;
+}
+@keyframes animate{
+30%{
+  transform: translate(0 -50px) rotate(360deg) scale(1);
+}
+
+60%{
+  transform: translate(0 -20px) rotate(0deg) scale(8);
+}
+100%{
+  transform: translate(0 ) rotate(0deg) scale(1);
+  opacity: 1;
+}
+}
+    
+</style>
+<body>
+    
+  <div class="modal" id="myModal">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+
+            <div class="modal-header">
+                <h5 class="modal-title">CUSTOMER FEEDBACK FORM</h5>
+               
+                <button class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+
+            <div class="modal-body">
+              <p>Thank you for taking time to provide feedback.</p>
+           <label for="fdb"> <h5> would you recommended it to your freinds and colleagues:</h5></label><br>
+           <center><input type="radio"   name="would you recommended it to your freinds and colleagues:">Yes
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <input type="radio"   name="would you recommended it to your freinds and colleagues:">No</center>
+           
+            <br><br>
+            <h5>Do you have any suggestion to improve our service:</h5>
+           <input type="text" placeholder="Type Something About Our Service" style="width: 465px;"  >
+           <br><br>
+           
+          
+
+
+
+
+            </div>
+            <div class="modal-footer">
+                <button  class="btn btn-success">Send</button>
+                <button class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+    
+      <nav class="navbar navbar-expand-lg navbar-primary bg-white py-4 fixed-top border-1 ">
+          <div class="container-fluid">
+              <a href="index.html" class="navbar-brand d-flex justify-content-between align-item-center order-lg-0 ">
+                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="https://rockparadise.com/cdn/shop/files/Rock_Paradise_Logo_3498b975-ea43-49f0-8eda-5b5ac79bc881_140x@2x.png?v=1676004611" alt="site icon" class="logo mb-2  "  style="height: 40px;"  >
+                  <!-- <span class="text-uppercase fa-lighter ms-2 mt-5">Incredible bridge</span> -->
+              </a><button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse order-lg-1 bg-white" id="navbarSupportedContent">
+              <ul class="navbar-nav mx-auto mb-2 mb-lg-0 text-center">
+                <li class="nav-item px-2 py-2">
+                  <a class="nav-link active text-uppercase text-dark" aria-current="page" href="index.html">Home</a>
+                </li>
+                <li class="nav-item px-2 py-2">
+                  <a class="nav-link text-uppercase text-dark" href="aboutus.html">About us</a>
+                </li>
+                <li class="nav-item px-2 py-2">
+                  <a class="nav-link text-uppercase text-dark" href="catagere.html">Category</a>
+                </li>
+            <li class="nav-item px-2 py-2">
+                  <a class="nav-link text-uppercase text-dark" href="visit.html">Shop</a>
+                </li>
+                </li>
+                
+                <li class="nav-item px-2 py-2">
+                  <a class="nav-link text-uppercase text-dark" href="gallery.html">Gallery</a>
+                </li>
+                <li class="nav-item px-2 py-2">
+                  <a class="nav-link text-uppercase text-dark" href="contactus.html">Contact Us</a>
+                </li>
+                <li class="nav-item px-2 py-2">
+                  <a class="nav-link text-uppercase text-dark"   data-bs-toggle="modal" data-bs-target="#myModal"   href="#">Feedback</a>
+                </li>
+              </ul>
+              <form class="d-flex align-item-center">
+                  <input class="form-control me-1 radius" type="search" placeholder="Search" aria-label="Search">
+                  <button class="btn btn-outline-primary   " type="submit"><i class="fa fa-search"></i></button>
+                </form>  
+          
+            </div>
+          </div>
+        </nav>
+        <div class="full-img" id="fullImgBox">
+            <img src="img/elephant.jpg" id="fullImg">
+            <span onclick="closefullImg()">X</span>
+        </div>
+        <div class="img-gallery">
+            <img src="images/pexels-ekaterina-bolovtsova-6766259.jpg" id="pic2" onclick="openfullImg(this.src)">
+           
+            <img src="images/a.jpeg" id="pic2" onclick="openfullImg(this.src)">
+            <img src="images/3.webp" id="pic2" onclick="openfullImg(this.src)">
+            <img src="images/2.webp" id="pic2" onclick="openfullImg(this.src)">
+            <img src="images/4.webp" id="pic2" onclick="openfullImg(this.src)">
+            <img src="images/5.jpeg" id="pic2" onclick="openfullImg(this.src)">
+            <img src="images/6.jpeg" id="pic2" onclick="openfullImg(this.src)" >
+            <img src="images/7.webp" id="pic2" onclick="openfullImg(this.src)">
+    
+            <img src="images/8.webp" id="pic2" onclick="openfullImg(this.src)">
+            <img src="images/9.webp" id="pic2" onclick="openfullImg(this.src)">
+            <img src="images/10.jpeg" id="pic2" onclick="openfullImg(this.src)">
+            <img src="images/11.jpeg" id="pic2" onclick="openfullImg(this.src)">
+            <img src="images/12.webp" id="pic2" onclick="openfullImg(this.src)">
+            <img src="images/pexels-ekaterina-bolovtsova-7445001.jpg" id="pic2" onclick="openfullImg(this.src)" >
+            <img src="images/14.webp" id="pic2" onclick="openfullImg(this.src)">
+            <img src="images/15.jpeg" id="pic2" onclick="openfullImg(this.src)">
+            <img src="images/pexels-ekaterina-bolovtsova-6766259.jpg" id="pic2" onclick="openfullImg(this.src)">
+            <img src="images/16.webp" id="pic2" onclick="openfullImg(this.src)">
+            <img src="images/17.jpeg" id="pic2" onclick="openfullImg(this.src)">
+            <img src="images/18.jpeg" id="pic2" onclick="openfullImg(this.src)">
+            <img src="images/19.jpeg" id="pic2" onclick="openfullImg(this.src)">
+            
+        
+        </div>
+         
+    <script>
+            var fullImgBox = document.getElementById("fullImgBox");
+            var fullImg = document.getElementById("fullImg");
+    
+            function openfullImg(pic){
+                fullImgBox.style.display = "flex";
+                fullImg.src = pic;
+            }
+    function closefullImg(){
+        fullImgBox.style.display = "none";
+    }
+    
+        </script>
+          <footer class="text-center text-lg-start  text-muted fotclr ">
+            <section class="fotclr">
+              <div class="container text-center text-md-start mt-5">
+                <div class="row mt-3">
+      
+                  <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4 mt-3  ">
+      
+                    <h6 class="text-uppercase fw-bold mb-4">
+                      <i class="fa fa-star me-3"></i>Rock Paradise&nbsp;&nbsp;&nbsp;&nbsp;<i class="fa fa-star me-3"></i>
+                    </h6>
+                    <p> Hey there! Welcome to Rock Paradise, your ultimate destination for all things natural stone. We're passionate about what we do, and we're thrilled to have you here. Our mission is simple: to bring you the highest quality natural stone products while offering you the best deals in town!</p>
+                  </div>
+      
+                  <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4 mt-3 ">
+      
+                    <h6 class="text-uppercase fw-bold mb-4  hed ">
+                      Site Map
+                    </h6>
+                    <p>
+                      <a href="#!" class="text btn ">Home</a>
+                    </p>
+                    <p>
+                      <a href="#!" class="text btn ">About Us</a>
+                    </p>
+                    <p>
+                      <a href="#!" class="text btn ">Category</a>
+                    </p>
+                    <p>
+                      <a href="#!" class="text btn ">Gallery</a>
+                    </p>
+                    <p>
+                      <a href="#!" class="text btn ">Contact Us</a>
+                    </p>
+                  </div>
+      
+                  <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4  mt-3 ">
+      
+                    <h6 class="text-uppercase fw-bold mb-4">
+                      Social Networks
+                    </h6>
+                    <p>
+                      <a href="#!" class="text btn "><i class="bi bi-facebook" ></i>Facebook </a>
+                    </p>
+                    <p>
+                      <a href="#!" class="text btn "> <i class="bi bi-instagram" ></i>Instagram </a>
+                    </p>
+                    <p>
+                      <a href="#!" class="text btn "><i class="bi bi-google" ></i>Google </a>
+                    </p>
+                    <p>
+                      <a href="#!" class="text btn "> <i class="bi bi-youtube" ></i>Youtube</a>
+                    </p>
+                    <p>
+                      <a href="#!" class="text btn "> <i class="bi bi-twitter" ></i>Twitter</a>
+                    </p>
+                  </div>
+      
+                  <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4 mt-3 ">
+      
+                    <h6 class="text-uppercase fw-bold mb-4">Contact</h6>
+                    <p><i class="fas fa-home me-3"></i>Karachi,Pakistan.</p><br>
+                    <p>
+                      <i class="fas fa-envelope me-3"></i>
+                      info@example.com
+                    </p><br>
+                    <p><i class="fas fa-phone me-3"></i> + 01 234 567 88</p><br>
+                    <p><i class="fas fa-print me-3"></i> + 01 234 567 89</p><br>
+                  </div>
+      
+                </div>
+      
+              </div>
+            </section>
+            <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.09);">
+              © 2023 Copyright:
+              <a class="text-reset fw-bold" href="#">www.rockparadise.com</a>
+            </div>
+      
+          </footer>
+          <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js" integrity="sha384-fbbOQedDUMZZ5KreZpsbe1LCZPVmfTnH7ois6mU1QK+m14rQ1l2bGBq41eYeM/fS" crossorigin="anonymous"></script>
+
+</body>
+</html>
